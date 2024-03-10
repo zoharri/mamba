@@ -1,0 +1,20 @@
+torch==2.0.0
+torchvision==0.15.1
+numpy==1.20.1
+tensorboard==2.5.0
+pandas==1.2.4
+matplotlib==3.4.1
+ruamel.yaml==0.17.4
+moviepy==1.0.3
+einops==0.3.0
+protobuf==3.20.0
+gym==0.23.0
+wandb==0.15.3
+opencv-python==4.7.0.72
+dm_control==1.0.9
+shapely==2.0.1
+panda-gym @ git+https://github.com/ec2604/panda-gym.git@ea54950bee1e8ae42b03dd7526bffac8764e5b90
+pybullet==3.2.5
+python-dateutil==2.8.2
+pillow==9.5.0
+imageio==2.31.0
