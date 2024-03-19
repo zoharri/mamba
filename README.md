@@ -1,9 +1,9 @@
 # MAMBA - Meta-RL Model-Based Algorithm
 This is an official Pytorch implementation of [MAMBA: AN EFFECTIVE WORLD MODEL APPROACH
-FOR META-REINFORCEMENT LEARNING](https://arxiv.org/) - Zohar Rimon, Tom Jurgenson, Orr Krupnik, Gilad Adler, Aviv Tamar, published at ICLR 2024.
+FOR META-REINFORCEMENT LEARNING](https://arxiv.org/abs/2403.09859) - Zohar Rimon, Tom Jurgenson, Orr Krupnik, Gilad Adler, Aviv Tamar, published at ICLR 2024.
 
 ## About
-Check out more cool visualizations and details in our website: https://sites.google.com/view/mamba-iclr2024
+Check out more cool visualizations and details on our website: https://sites.google.com/view/mamba-iclr2024
 
 MAMBA is a new model-based approach to meta-
 RL, based on elements from existing state-of-the-art model-based and meta-RL
@@ -64,7 +64,7 @@ You can find all of the parameters in the config.yaml file.
 ### Policy Inference and VIsualization
 
 We provide an example of how to run the policy inference and visualize the results in `policy_inference.py`.
-Currently the code only supports the panda_reach environment, but it can be easily extended to other environments.
+Currently, the code only supports the panda_reach environment, but it can be easily extended to other environments.
 To visualize an experiment, just change the path in the policy_inference to the wandb experiment dir.
 
 <p align="center">
@@ -74,7 +74,7 @@ To visualize an experiment, just change the path in the policy_inference to the 
 ### Adding a New Environment
 To add a new environment:
 1. Add the env code to the `envs` folder
-2. Add the env to the make_env function in `dreamer.py` together with any needed wrappers (you can use the `envs/wrappers.py` as reference and the other envs as examples)
+2. Add the env to the make_env function in `dreamer.py` together with any needed wrappers (you can use the `envs/wrappers.py` as a reference and the other envs as examples)
 3. Add a new config to the `config.yaml` file
 
 
