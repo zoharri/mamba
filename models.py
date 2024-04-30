@@ -420,7 +420,7 @@ class ImagBehavior(nn.Module):
                 imag_feat, imag_state, imag_action = self._imagine(
                     start, self.actor, self._config.imag_horizon
                 )
-                reward, reward_metrics = objective(imag_feat, imag_state, imag_action)
+                reward = objective(imag_feat, imag_state, imag_action)
 
                 # this target is not scaled
                 target, weights, base, actor_ent, state_ent = self._compute_target(

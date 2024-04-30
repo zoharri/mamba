@@ -38,7 +38,8 @@ class DeepMindControl:
             if key in self._state_keys_to_ignore:
                 continue
             spaces[key] = gym.spaces.Box(-np.inf, np.inf, shape, dtype=np.float32)
-        spaces["image"] = gym.spaces.Box(0, 255, self._size + (3,), dtype=np.uint8)
+        if not self._detach_image_from_obs:
+            spaces["image"] = gym.spaces.Box(0, 255, self._size + (3,), dtype=np.uint8)
         return gym.spaces.Dict(spaces)
 
     @property
