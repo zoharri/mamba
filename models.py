@@ -301,7 +301,8 @@ class WorldModel(nn.Module):
         if "image" in obs.keys():
             obs["image"] = torch.Tensor(obs["image"]) / 255.0 - 0.5
         # (batch_size, batch_length) -> (batch_size, batch_length, 1)
-        obs["reward"] = torch.Tensor(obs["reward"]).unsqueeze(-1)
+        if "reward" in obs:
+            obs["reward"] = torch.Tensor(obs["reward"]).unsqueeze(-1)
         if "discount" in obs:
             obs["discount"] *= self._config.discount
             # (batch_size, batch_length) -> (batch_size, batch_length, 1)
@@ -461,8 +462,7 @@ class ImagBehavior(nn.Module):
 
         metrics.update(tools.tensorstats(value.mode(), "value"))
         metrics.update(tools.tensorstats(target, "target"))
-        for reward_metric_name in reward_metrics:
-            metrics.update(tools.tensorstats(reward_metrics[reward_metric_name], reward_metric_name))
+        metrics.update(tools.tensorstats(reward, "imag_reward"))
         if self._config.actor_dist in ["onehot"]:
             metrics.update(
                 tools.tensorstats(
