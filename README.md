@@ -47,7 +47,7 @@ To use MuJoCo:
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mjpro150/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia-000
 conda install -c conda-forge mesalib glew glfw patchelf
-pip install lockfile==0.12.2 cffi==1.15.1 Cython==0.29.36 mujoco-py==1.50.1.68
+pip install lockfile==0.12.2 cffi==1.15.1 Cython==0.29.36 mujoco-py==1.50.1.68 gym==0.19.0
 ```
 
 
