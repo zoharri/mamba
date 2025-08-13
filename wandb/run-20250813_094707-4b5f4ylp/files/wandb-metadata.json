@@ -1,0 +1,44 @@
+{
+  "os": "macOS-15.6-arm64-arm-64bit-Mach-O",
+  "python": "CPython 3.13.6",
+  "startedAt": "2025-08-13T07:47:07.645552Z",
+  "program": "/opt/ai/rl/mamba/dreamer.py",
+  "codePath": "dreamer.py",
+  "git": {
+    "remote": "git@github.com:zoharri/mamba.git",
+    "commit": "46e03638cbf755b4bacf0c7e116e7a71bfd8d0b3"
+  },
+  "email": "info@pannous.com",
+  "root": "/opt/ai/rl/mamba",
+  "host": "mac.fritz.box",
+  "executable": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+  "codePathLocal": "dreamer.py",
+  "cpu_count": 10,
+  "cpu_count_logical": 10,
+  "disk": {
+    "/": {
+      "total": "1995218165760",
+      "used": "1368803299328"
+    },
+    "/System/Volumes/Data": {
+      "total": "1995218165760",
+      "used": "1368803299328"
+    }
+  },
+  "memory": {
+    "total": "34359738368"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 10
+  },
+  "apple": {
+    "name": "Apple M2 Pro",
+    "ecpuCores": 4,
+    "pcpuCores": 6,
+    "gpuCores": 16,
+    "memoryGb": 32,
+    "swapTotalBytes": "1073741824",
+    "ramTotalBytes": "34359738368"
+  }
+}

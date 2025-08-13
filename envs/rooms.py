@@ -79,6 +79,12 @@ class RoomNaviNew(gym.Env):
         space.discrete = True
         return space
 
+    def seed(self, seed=None):
+        if seed is not None:
+            np.random.seed(seed)
+            random.seed(seed)
+        return [seed]
+
     def sample_task(self):
         return np.array([random.choice(curr_possible_goals) for curr_possible_goals in self.possible_goals]).flatten()
 

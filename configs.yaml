@@ -21,7 +21,7 @@ defaults:
   video_pred_log: False
 
   # Environment
-  task: 'dmc_walker_walk'
+  task: 'rooms'
   size: [ 64, 64 ]
   envs: 10
   action_repeat: 1
@@ -32,7 +32,15 @@ defaults:
   reward_EMA: True
   num_meta_episodes: 1
   max_episode_length: 100
-  meta_learning: True
+  meta_learning: False
+  detach_image_from_obs: false
+  dense_reward: true
+  small_state_space: false
+  num_goals: 1
+  goal_dist_theta: 1
+  goal_dist_radius: 1
+  num_cells: 3
+  num_rooms: 3
 
   # Model
   rnn_detach_every: -1

@@ -1,0 +1,310 @@
+_wandb:
+    value:
+        cli_version: 0.19.8
+        m: []
+        python_version: 3.13.6
+        t:
+            "1":
+                - 1
+                - 55
+                - 105
+            "2":
+                - 1
+                - 55
+                - 105
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.13.6
+            "5": 0.19.8
+            "8":
+                - 5
+            "12": 0.19.8
+            "13": darwin-arm64
+ac_opt_eps:
+    value: 1e-05
+act:
+    value: SiLU
+action_repeat:
+    value: 1
+action_unimix_ratio:
+    value: 0.01
+actor_dist:
+    value: normal
+actor_entropy:
+    value: "3e-4"
+actor_grad_clip:
+    value: 100
+actor_init_std:
+    value: 1
+actor_layers:
+    value: 2
+actor_lr:
+    value: 6e-05
+actor_max_std:
+    value: 1
+actor_min_std:
+    value: 0.1
+actor_state_entropy:
+    value: 0
+actor_temp:
+    value: 0.1
+all_layers:
+    value: 0
+batch_length:
+    value: 900
+batch_size:
+    value: 16
+behavior_batch_length:
+    value: 512
+behavior_stop_grad:
+    value: true
+collect_dyn_sample:
+    value: true
+compile:
+    value: true
+cont_layers:
+    value: 2
+cont_scale:
+    value: 1
+dataset_size:
+    value: 1000000
+debug:
+    value: false
+decoder:
+    value:
+        act: SiLU
+        cnn_depth: 32
+        cnn_keys: image
+        cnn_sigmoid: false
+        image_dist: mse
+        input_reward: true
+        kernel_size: 4
+        minres: 4
+        mlp_keys: .*
+        mlp_layers: 2
+        mlp_units: 512
+        norm: LayerNorm
+        vector_dist: symlog_mse
+dense_reward:
+    value: false
+detach_image_from_obs:
+    value: true
+device:
+    value: cuda:0
+disag_action_cond:
+    value: false
+disag_layers:
+    value: 4
+disag_log:
+    value: true
+disag_models:
+    value: 10
+disag_offset:
+    value: 1
+disag_target:
+    value: stoch
+disag_units:
+    value: 400
+discount:
+    value: 0.997
+discount_lambda:
+    value: 0.95
+dyn_cell:
+    value: gru_layer_norm
+dyn_deter:
+    value: 512
+dyn_discrete:
+    value: 16
+dyn_hidden:
+    value: 64
+dyn_input_layers:
+    value: 1
+dyn_mean_act:
+    value: none
+dyn_min_std:
+    value: 0.1
+dyn_output_layers:
+    value: 1
+dyn_rec_depth:
+    value: 1
+dyn_scale:
+    value: "0.5"
+dyn_shared:
+    value: false
+dyn_std_act:
+    value: sigmoid2
+dyn_stoch:
+    value: 16
+dyn_temp_post:
+    value: true
+encoder:
+    value:
+        act: SiLU
+        cnn_depth: 32
+        cnn_keys: image
+        input_reward: true
+        kernel_size: 4
+        minres: 4
+        mlp_keys: .*
+        mlp_layers: 2
+        mlp_units: 512
+        norm: LayerNorm
+        symlog_inputs: true
+envs:
+    value: 10
+eval_episode_num:
+    value: 20
+eval_every_collection_episodes:
+    value: 200
+eval_noise:
+    value: 0
+eval_state_mean:
+    value: false
+evaldir:
+    value: dmc_proprio_goal/13-08-2025-09-49-05_612214320e01040f39acf832e6db825cc080d37456a511e4d4528aff4694ea32/eval_eps
+exp_label:
+    value: exp
+expl_amount:
+    value: 0
+expl_behavior:
+    value: greedy
+expl_extr_scale:
+    value: 0
+expl_gifs:
+    value: false
+expl_intr_scale:
+    value: 1
+expl_until:
+    value: 0
+future_entropy:
+    value: false
+goal_dist_radius:
+    value: 1
+goal_dist_theta:
+    value: 1
+grad_clip:
+    value: 1000
+grad_heads:
+    value:
+        - decoder
+        - reward
+        - cont
+grayscale:
+    value: false
+hidden_states_subsample:
+    value: 64
+imag_gradient:
+    value: dynamics
+imag_gradient_mix:
+    value: "0.0"
+imag_horizon:
+    value: 10
+imag_sample:
+    value: true
+initial:
+    value: learned
+initial_wm_horizon:
+    value: 50
+kl_free:
+    value: "1.0"
+log_every:
+    value: 10000
+log_imagined_horizon_effective_length:
+    value: false
+logdir:
+    value: ./dmc_proprio_goal
+mamba_context:
+    value: true
+max_episode_length:
+    value: 300
+meta_learning:
+    value: true
+model_lr:
+    value: 0.0002
+norm:
+    value: LayerNorm
+num_goals:
+    value: 2
+num_meta_episodes:
+    value: 3
+offline_evaldir:
+    value: ""
+offline_traindir:
+    value: ""
+opt:
+    value: adam
+opt_eps:
+    value: 1e-08
+precision:
+    value: 32
+prefill:
+    value: 25
+pretrain:
+    value: 100
+reach_wm_horizon_limit:
+    value: 5e+06
+reconstruction_window:
+    value: 3
+rep_scale:
+    value: "0.1"
+reset_every:
+    value: 0
+reward_EMA:
+    value: true
+reward_head:
+    value: symlog_disc
+reward_layers:
+    value: 2
+reward_scale:
+    value: 1
+rnn_detach_every:
+    value: -1
+sample_first:
+    value: true
+seed:
+    value: 0
+size:
+    value:
+        - 64
+        - 64
+slow_target_fraction:
+    value: 0.02
+slow_target_update:
+    value: 1
+slow_value_target:
+    value: true
+small_state_space:
+    value: true
+steps:
+    value: 2e+07
+task:
+    value: dmc_reacher_goal
+test_episode_num:
+    value: 1000
+time_limit:
+    value: 1000
+train_ratio:
+    value: 0.03
+traindir:
+    value: dmc_proprio_goal/13-08-2025-09-49-05_612214320e01040f39acf832e6db825cc080d37456a511e4d4528aff4694ea32/train_eps
+unimix_ratio:
+    value: 0.01
+units:
+    value: 128
+value_decay:
+    value: 0
+value_grad_clip:
+    value: 100
+value_head:
+    value: symlog_disc
+value_layers:
+    value: 2
+value_lr:
+    value: 6e-05
+video_pred_log:
+    value: false
+weight_decay:
+    value: 0

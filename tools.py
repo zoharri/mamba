@@ -45,7 +45,7 @@ class Logger:
             project="dreamer-v3",
             name=config.exp_label,
             config=config,
-            # mode="disabled",  # for debug don't capture wandb
+            mode="disabled",  # for debug don't capture wandb
         )
         self._config = config
         self._last_step = None

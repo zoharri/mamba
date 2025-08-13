@@ -241,7 +241,11 @@ def make_dataset(episodes, config):
 
 
 def make_env(config, mode):
-    suite, task = config.task.split("_", 1)
+    if "_" in config.task:
+        suite, task = config.task.split("_", 1)
+    else:
+        suite = config.task
+        task = ""
     if suite == "dmc":
         import envs.dmc as dmc
         if config.meta_learning:
