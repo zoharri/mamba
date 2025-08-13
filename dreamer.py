@@ -334,7 +334,7 @@ def make_env(config, mode):
 def main(config):
     curr_log_file = pathlib.Path(
         datetime.datetime.now().strftime("%d-%m-%Y-%H-%M-%S") + "_" + hashlib.sha256(str(config).encode()).hexdigest())
-    logdir = pathlib.Path(config.logdir).expanduser()
+    logdir = pathlib.Path(config.logdir or "./logs").expanduser()
     logdir = logdir / curr_log_file
     print("Logging to ", logdir)
     if config.all_layers != 0:
@@ -528,7 +528,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--configs", nargs="+")
     args, remaining = parser.parse_known_args()
-    configs = yaml.safe_load(
+    yaml_loader = yaml.YAML(typ='safe', pure=True)
+    configs = yaml_loader.load(
         (pathlib.Path(sys.argv[0]).parent / "configs.yaml").read_text()
     )
 
