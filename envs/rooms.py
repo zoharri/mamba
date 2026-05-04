@@ -99,7 +99,8 @@ class RoomNaviNew(gym.Env):
         self.step_count = 0
         self.reached_goals = [False] * self.num_rooms
         self._env_state = np.array(self.starting_state)
-
+        if not hasattr(self, 'goals') or self.goals is None:
+            self.goals = self.sample_task()
         return {"state": self.normalize_obs(self._env_state.copy()), "is_terminal": False, "is_first": True}
 
     def reset(self):
@@ -218,7 +219,7 @@ class RoomNaviNew(gym.Env):
         return classes
 
     def state2image(self, state, episode_idx, task):
-        goals = task.reshape(-1, 2)
+        goals = (task if task is not None else self.goals).reshape(-1, 2)
         img = np.zeros((self.height + 1, self.width, 3))
         # draw corridor
         for x in range(self.width):
@@ -245,7 +246,8 @@ class RoomNaviNew(gym.Env):
             img[goals[i, 1] + self.offset, goals[i, 0]] = curr_color
 
         # draw episode number
-        img[self.height, :episode_idx] = [0, 255, 0]
-        img[self.height, episode_idx:] = [255, 255, 255]
+        ep = int(episode_idx)
+        img[self.height, :ep] = [0, 255, 0]
+        img[self.height, ep:] = [255, 255, 255]
         return img
 

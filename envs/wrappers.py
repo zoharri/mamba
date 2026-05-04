@@ -35,6 +35,7 @@ class NormalizeActions(gym.Wrapper):
         self._low = np.where(self._mask, env.action_space.low, -1)
         self._high = np.where(self._mask, env.action_space.high, 1)
 
+    @property
     def action_space(self):
         low = np.where(self._mask, -np.ones_like(self._low), self._low)
         high = np.where(self._mask, np.ones_like(self._low), self._high)
@@ -52,6 +53,7 @@ class OneHotAction(gym.Wrapper):
         super().__init__(env)
         self._random = np.random.RandomState()
 
+    @property
     def action_space(self):
         shape = (self.env.action_space.n,)
         space = gym.spaces.Box(low=0, high=1, shape=shape, dtype=np.float32)

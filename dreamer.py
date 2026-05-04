@@ -336,6 +336,12 @@ def make_env(config, mode):
 
 
 def main(config):
+    import torch
+    if config.device == 'cuda:0' and not torch.cuda.is_available():
+        if torch.backends.mps.is_available():
+            config.device = 'mps'
+        else:
+            config.device = 'cpu'
     curr_log_file = pathlib.Path(
         datetime.datetime.now().strftime("%d-%m-%Y-%H-%M-%S") + "_" + hashlib.sha256(str(config).encode()).hexdigest())
     logdir = pathlib.Path(config.logdir or "./logs").expanduser()
